@@ -1,1 +1,66 @@
-
+print ("1. Make a code")
+print ("2. Decode a message")
+print ("3. Quit")
+choice = input('what do you want to do?(use the numbers as options): ')
+if choice == '1':
+   print ("You may enter a sentence below")
+   message = input('input: ')
+   print ("insert how many times the sentence is shifted")
+   code = int(input('insert: '))
+   result = ''
+   N0 = ord('A')
+   N1= ord('Z')
+   N2= N1 - N0 + 1
+   def CCA1(message,code):
+       result = ''
+       for Alpha in message.upper():
+           if Alpha.isalpha():
+               Beta = ord(Alpha)
+               Gamma = Beta + code
+               if Beta > N1:
+                   Beta= Beta - N2
+               if Beta < N0:
+                   Beta= Beta + N2
+               Delta = chr(Gamma)
+               result= result + Delta
+           else:
+               result = result + Delta
+       print (result)
+   CCA1 (message,code)
+   print ("1. Make a code")
+   print ("2. Decode a message")
+   print ("3. Quit")
+   choice = input('what do you want to do now?(use the numbers as options): ')
+elif choice == '2':
+    print ("You may enter a encoded message")
+    message = input('input: ')
+    print ("insert how many times the sentence was shifted (add a negative sign)")
+    code = int(input('insert: '))
+    result = ''
+    N0 = ord('A')
+    N1= ord('Z')
+    N2= N1 - N0 + 1
+    def CCA1(message,code):
+       result = ''
+       for Alpha in message.upper():
+           if Alpha.isalpha():
+               Beta = ord(Alpha)
+               Gamma = Beta + code
+               if Beta > N1:
+                   Beta= Beta - N2
+               if Beta < N0:
+                   Beta= Beta + N2
+               Delta = chr(Gamma)
+               result= result + Delta
+           else:
+               result = result + Delta
+       print (result)
+    CCA1 (message,code)
+    print ("1. Make a code")
+    print ("2. Decode a message")
+    print ("3. Quit")
+    choice = input('what do you want to do now?(use the numbers as options): ')  
+if choice == '3':
+    print("Thanks for messing with us")
+else:
+    print ("I'll assume that's a 3")
