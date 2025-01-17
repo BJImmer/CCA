@@ -1,1 +1,61 @@
+import random
+print ("Welcome to Mastermind!")
+print ("In this game, you must guess the four colours")
+print ("The options are: red(r), blue (b), orange (o), and violet (v)")
+print ("There is no limit, so go as long as you please")
+print ("And when inputing your guess, make sure there's no spaces")
+print ("Good luck!")
 
+
+Options = ['r','b','o','v']
+random.shuffle(Options)
+print(Options)
+
+Guess = str(input("What's your guess?: "))
+Guess = Guess.lower()
+
+ 
+if list(Guess) == Options:
+    print("First try? nice.")
+else:
+     
+    counter = 0
+ 
+    while list(Guess) != Options:
+        counter += 1
+         
+        count = 0
+         
+        correct = ['X']*4
+ 
+        for p in range(0,4):
+             
+            if(Guess[p] == Options[p]):
+                count += 1
+                correct[p] = Guess[p]
+ 
+            else:
+                continue
+ 
+     
+        if (count < 4) and (count != 0):
+            print("Wow! nice guess, you got", count, "correct!")
+            print("Don't stop now! there's still more to go")
+            print()
+            for k in correct:
+                print(k, end='')
+            print()
+            print()
+            Guess = input("What's your guess?: ")
+            Guess = Guess.lower()
+             
+ 
+        elif (count == 0):
+            print("Womp Womp! none of these were right")
+            Guess = input("What's your guess?: ")
+            Guess = Guess.lower()
+             
+ 
+    if list(Guess) == Options:
+        print("You did it!")
+        print("It took you", counter, "tries, not bad")
