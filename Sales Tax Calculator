@@ -1,0 +1,29 @@
+Items = {"ipad":100,"macbook":100,"iphone":100,"samsung":100}
+Student_Card = 0.15
+print ("Welcome to my tax Calculator!")
+print (f"for now, your options are {Items}")
+option = input ("What do you want to check?: ")
+if option in Items:
+    def calcTax(x):
+            Tax = Items * 0.13
+            return x - Tax
+    Items = Items [option]
+    print (f"The item you chosen, a {option}, costs {Items}$")
+    print ("now, do you have a student card with you?")
+    choice = input ('(Y/N): ')
+    if choice == 'Y':
+        def Sale1(x):
+            return x * Items
+        Before = Sale1 (Student_Card)
+        After = Items - Before
+        Price= calcTax(After)
+        Price = round (Price,2)
+        print (f"your object will be {Price}$")
+    elif choice == 'N':
+         Price = calcTax (Items)
+         Price = round (Price,2)
+         print (f"your object will be {Price}$")
+    else:
+         print ("Input unknown, please try again :p")
+else:
+     print ("Input unknown, please try again :p")
