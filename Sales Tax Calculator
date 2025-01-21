@@ -1,4 +1,4 @@
-Items = {"ipad":100,"macbook":100,"iphone":100,"samsung":100}
+Items = {"ipad":399.99,"macbook":1099.99,"iphone":299.99,"samsung":299.99}
 Student_Card = 0.15
 print ("Welcome to my tax Calculator!")
 print (f"for now, your options are {Items}")
