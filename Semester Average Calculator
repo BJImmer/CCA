@@ -1,0 +1,27 @@
+import math
+import statistics
+AoS = 4
+Tries = 3
+List = dict()
+Title = print ("Welcome to the Semester Average Calculator!")
+while Tries > 0:
+    AoS = 4
+    while AoS > 0:
+        Subject = input("Insert your Subject: ")
+        Mark = float(input("What's this subjects final mark?: "))
+        if Mark > 100:
+            print ("Mark is invalid")
+            Tries = Tries - 1
+        if Mark < 0:
+            print ("Mark is invalid")
+            Tries = Tries - 1
+        List[Subject] = Mark
+        AoS = AoS - 1
+        if AoS == 0:
+            print (List)
+            Average = statistics.mean(list(List.values))
+            print ("The Average mark is: " + str(Average))
+            break
+        if Tries == 0:
+            print ("System has locked you out, try again (later)")
+            break
